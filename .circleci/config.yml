@@ -22,8 +22,8 @@ jobs:
           name: Install CMAKE
           command: 'apt-get update && sudo apt-get install -y cmake'
       - run:
-          name: source /opt/ros/foxy/setup.sh
-          command: 'source /opt/ros/foxy/setup.sh'
+          name: . /opt/ros/foxy/setup.sh
+          command: '. /opt/ros/foxy/setup.sh'
       - run:
           name: colcon build
           command: 'colcon build'
