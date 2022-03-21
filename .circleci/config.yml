@@ -20,11 +20,5 @@ jobs:
           name: Install CMAKE
           command: 'apt-get update && sudo apt-get install -y cmake'
       - run:
-          name: Creating Build Files
-          command: 'cmake -H. -Bbuild'
-      - run:
-          name: Creating Binary Files
-          command: 'cmake --build build'
-      - run:
-          name: Point Unit Testing
-          command: './bin/point_test'
+          name: colcon build
+          command: 'colcon build'
