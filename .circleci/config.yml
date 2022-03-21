@@ -20,5 +20,8 @@ jobs:
           name: Install CMAKE
           command: 'apt-get update && sudo apt-get install -y cmake'
       - run:
-          name: colcon build
-          command: 'colcon build'
+          name: source /opt/ros/foxy/setup.sh
+          command: 'source /opt/ros/foxy/setup.sh'
+      - run:
+          name: Point Unit Testing
+          command: './bin/point_test'
