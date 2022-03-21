@@ -1,0 +1,24 @@
+version: 2
+
+
+jobs:
+  build:
+    docker:
+      - image: "osrf/ros:foxy-desktop"
+    steps:
+      - checkout
+      - run:
+          name: Installing SUDO
+          command: 'apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*'
+      - run:
+          name: Installing GCC
+          command: 'apt-get update && apt-get install -y gcc g++'
+      - run:
+          name: Installing tzdata
+          command: 'DEBIAN_FRONTEND="noninteractive" TZ="America/New_York" apt-get install -y tzdata'
+      - run:
+          name: Install CMAKE
+          command: 'apt-get update && sudo apt-get install -y cmake'
+      - run:
+          name: colcon build
+          command: 'colcon build'
