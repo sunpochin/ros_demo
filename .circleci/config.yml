@@ -9,6 +9,6 @@ jobs:
       - checkout
       - run:
           name: local_setup
-          command: 
+          command: |
             source /opt/ros/foxy/local_setup.bash
             colcon build
