@@ -22,6 +22,6 @@ jobs:
       - run:
           name: local_setup
           command: | 
-            'source /opt/ros/foxy/local_setup.sh'
+            'source /opt/ros/foxy/local_setup.bash'
             cd ..
             colcon build
